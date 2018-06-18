@@ -75,7 +75,7 @@ class FecharPreListaDePostagem
         return $result;
     }
 
-    private function getPlpXml(PreListaDePostagem $data)
+    public function getPlpXml(PreListaDePostagem $data)
     {
         $writer = new \XMLWriter();
         $writer->openMemory();
@@ -97,7 +97,7 @@ class FecharPreListaDePostagem
         return $writer;
     }
 
-    public function writePlp(\XMLWriter $writer, PreListaDePostagem $data)
+    private function writePlp(\XMLWriter $writer, PreListaDePostagem $data)
     {
         $writer->startElement('plp');
         $writer->writeElement('id_plp');
