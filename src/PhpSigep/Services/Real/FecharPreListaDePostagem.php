@@ -97,7 +97,7 @@ class FecharPreListaDePostagem
         return $writer;
     }
 
-    private function writePlp(\XMLWriter $writer, PreListaDePostagem $data)
+    public function writePlp(\XMLWriter $writer, PreListaDePostagem $data)
     {
         $writer->startElement('plp');
         $writer->writeElement('id_plp');
