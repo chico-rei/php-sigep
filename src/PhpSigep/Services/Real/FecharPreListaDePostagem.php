@@ -47,7 +47,7 @@ class FecharPreListaDePostagem
         try {
             $r = SoapClientFactory::getSoapClient()->fechaPlpVariosServicos($soapArgs);
             
-            if (class_exists('\Log',false)) {
+            if (class_exists('\Log')) {
                 \Log::debug('Retorno SIGEP fecha PLP: ' . print_r($r, true));
             }
             
