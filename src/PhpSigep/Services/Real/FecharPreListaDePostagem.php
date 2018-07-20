@@ -33,7 +33,6 @@ class FecharPreListaDePostagem
         }
 
         $xml = utf8_encode($xmlDaPreLista->flush());
-		$xml = iconv('UTF-8', 'ISO-8859-1', $xml);
 
         $soapArgs = array(
             'xml'            => $xml,
@@ -47,9 +46,11 @@ class FecharPreListaDePostagem
         $result = new Result();
         try {
             $r = SoapClientFactory::getSoapClient()->fechaPlpVariosServicos($soapArgs);
-            if (class_exists('\StaLib_Logger',false)) {
-                \StaLib_Logger::log('Retorno SIGEP fecha PLP: ' . print_r($r, true));
+            
+            if (class_exists('\Log',false)) {
+                \Log::debug('Retorno SIGEP fecha PLP: ' . print_r($r, true));
             }
+            
             if ($r instanceof \SoapFault) {
                 throw $r;
             }
