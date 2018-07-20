@@ -157,7 +157,7 @@ class FecharPreListaDePostagem
     private function writeObjetoPostal(\XMLWriter $writer, ObjetoPostal $objetoPostal)
     {
         $writer->startElement('objeto_postal');
-        $writer->writeElement('numero_etiqueta', $objetoPostal->getEtiqueta()->getEtiquetaSemDv());
+        $writer->writeElement('numero_etiqueta', $objetoPostal->getEtiqueta()->getEtiquetaComDv());
         $writer->writeElement('codigo_objeto_cliente');
         $writer->writeElement('codigo_servico_postagem', $objetoPostal->getServicoDePostagem()->getCodigo());
         $writer->writeElement('cubagem', (float)$objetoPostal->getCubagem());
