@@ -134,6 +134,8 @@ class CalcPrecoPrazo
             \StaLib_Logger::log('Retorno SIGEP: ' . print_r($r, true));
         }
 
+        \Log::debug('Retorno SIGEP: ' . print_r($r, true));
+
         $retorno = array();
         if (is_object($r) && property_exists($r, 'CalcPrecoPrazoResult') && is_object($r->CalcPrecoPrazoResult)
             && $r->CalcPrecoPrazoResult->Servicos && is_object($r->CalcPrecoPrazoResult->Servicos)
