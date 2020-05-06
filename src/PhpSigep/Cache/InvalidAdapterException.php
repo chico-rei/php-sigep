@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpSigep\Cache\Storage\Adapter\Exception;
+namespace PhpSigep\Cache;
 
 class InvalidAdapterException extends \PhpSigep\Exception
 {
