@@ -140,8 +140,8 @@ class SolicitaEtiquetas implements RealServiceInterface
     
     public function createNumberEtiquetasByRange($startingEtiqueta, $finalEtiqueta){
         
-        $prefix = \substr($startingEtiqueta, 0, 2);
-        $sufix  = \substr($startingEtiqueta, 11);
+        $prefix = \mb_substr($startingEtiqueta, 0, 2, 'UTF-8');
+        $sufix  = \mb_substr($startingEtiqueta, 11, null, 'UTF-8');
                 
         $startingNumber = (int)$this->getNumbersEtiqueta($startingEtiqueta);
         $finalNumber    = (int)$this->getNumbersEtiqueta($finalEtiqueta);

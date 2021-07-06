@@ -461,7 +461,7 @@ class FileSystem extends AbstractAdapter
                 throw new Exception\RuntimeException("Error writing file '{$file}'", 0, $err);
             }
 
-            if (!ftruncate($fp, strlen($data))) {
+            if (!ftruncate($fp, mb_strlen($data))) {
                 flock($fp, LOCK_UN);
                 fclose($fp);
                 $err = ErrorHandler::stop();

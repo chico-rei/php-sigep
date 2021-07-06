@@ -26,7 +26,7 @@ class Etiqueta extends AbstractModel
     public function getDv()
     {
         if ($this->dv === null) {
-            $numero              = substr($this->getEtiquetaSemDv(), 2, 8);
+            $numero              = mb_substr($this->getEtiquetaSemDv(), 2, 8, 'UTF-8');
             $fatoresDePonderacao = array(8, 6, 4, 2, 3, 5, 9, 7);
             $soma                = 0;
             for ($i = 0; $i < 8; $i++) {
@@ -63,7 +63,7 @@ class Etiqueta extends AbstractModel
     {
         if (!$this->etiquetaSemDv) {
             $comDv               = $this->getEtiquetaComDv();
-            $this->etiquetaSemDv = substr($comDv, 0, 10) . substr($comDv, 11);
+            $this->etiquetaSemDv = mb_substr($comDv, 0, 10, 'UTF-8') . mb_substr($comDv, 11, null, 'UTF-8');
         }
 
         return $this->etiquetaSemDv;
@@ -85,7 +85,7 @@ class Etiqueta extends AbstractModel
     {
         if (!$this->etiquetaComDv) {
             $semDv               = $this->getEtiquetaSemDv();
-            $this->etiquetaComDv = substr($semDv, 0, 10) . $this->getDv() . substr($semDv, 10);
+            $this->etiquetaComDv = mb_substr($semDv, 0, 10, 'UTF-8') . $this->getDv() . mb_substr($semDv, 10, null, 'UTF-8');
         }
 
         return $this->etiquetaComDv;
@@ -104,7 +104,7 @@ class Etiqueta extends AbstractModel
      */
     public function getNumeroSemDv()
     {
-        return substr($this->getEtiquetaSemDv(), 2, 8);
+        return mb_substr($this->getEtiquetaSemDv(), 2, 8, 'UTF-8');
     }
 
 }
