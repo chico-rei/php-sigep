@@ -58,6 +58,12 @@ class DestinoNacional extends AbstractModel implements Destino
      */
     protected $numeroNotaFiscal;
     /**
+     * Número da nota fiscal
+     * Opcional.
+     * @var int
+     */
+    protected $ChaveNFe;
+    /**
      * Série da nota fiscal
      * Não obrigatório
      * Max length: 20
@@ -192,6 +198,16 @@ class DestinoNacional extends AbstractModel implements Destino
     public function setNumeroNotaFiscal($numeroNotaFiscal)
     {
         $this->numeroNotaFiscal = $numeroNotaFiscal;
+    }
+
+    public function getChaveNFe()
+    {
+        return $this->ChaveNFe;
+    }
+
+    public function setChaveNFe($ChaveNFe)
+    {
+        $this->ChaveNFe = $ChaveNFe;
     }
 
     /**

@@ -229,6 +229,9 @@ class FecharPreListaDePostagem
             $writer->endElement();
             $writer->writeElement('codigo_usuario_postal');
             $writer->writeElement('centro_custo_cliente');
+            if ($destino->getChaveNFe()) {
+                $writer->writeElement('ChaveNFe', $destino->getChaveNFe());
+            }
             $writer->writeElement('numero_nota_fiscal', $destino->getNumeroNotaFiscal());
             $writer->writeElement('serie_nota_fiscal', $this->_($destino->getSerieNotaFiscal(), 20));
             $writer->writeElement('valor_nota_fiscal', $destino->getValorNotaFiscal());
