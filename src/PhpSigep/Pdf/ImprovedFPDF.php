@@ -42,7 +42,7 @@ class ImprovedFPDF extends \PhpSigepFPDF
         if (extension_loaded('iconv')) {
             return iconv('UTF-8', 'ISO-8859-1', $str);
         } else {
-            return utf8_decode($str);
+            return mb_convert_encoding($str, 'ISO-8859-1', 'UTF-8');
         }
     }
 

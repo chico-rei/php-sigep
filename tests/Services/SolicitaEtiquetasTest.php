@@ -3,7 +3,7 @@
 class SolicitaEtiquetasTest extends TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         
         $config = new \PhpSigep\Config();
         

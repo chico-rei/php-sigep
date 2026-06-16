@@ -4,7 +4,7 @@
 // No seu ambiente de produção, você não vai precisar alterar estas configurações.
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-ini_set('error_reporting', 'E_ALL|E_STRICT');
+ini_set('error_reporting', 'E_ALL');
 error_reporting(E_ALL);
 
 header('Content-Type: text/html; charset=utf-8');

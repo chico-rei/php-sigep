@@ -4,9 +4,8 @@ namespace PhpSigep\Services\SoapClient;
 
 use PhpSigep\Model\Etiqueta;
 use PhpSigep\Model\ServicoAdicional;
-use string;
 
-class Simulador implements SoapClientInterface
+class Simulador
 {
 
     /**

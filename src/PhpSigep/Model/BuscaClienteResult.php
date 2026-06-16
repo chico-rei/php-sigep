@@ -9,6 +9,7 @@ namespace PhpSigep\Model;
  * 
  * @author: Stavarengo
  */
+#[\AllowDynamicProperties]
 class BuscaClienteResult extends AbstractModel
 {
     /**

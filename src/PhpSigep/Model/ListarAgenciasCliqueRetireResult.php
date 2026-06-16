@@ -5,6 +5,7 @@ namespace PhpSigep\Model;
  * @author: Cristiano Soares
  * @link: http://comerciobr.com
  */
+#[\AllowDynamicProperties]
 class ListarAgenciasCliqueRetireResult extends AbstractModel
 {
     /**

@@ -447,7 +447,6 @@ class CartaoDePostagem2018
 
             $this->setFillColor(222, 222, 222);
             $this->pdf->gdImage($semaCodeGD, 40, 2, 25, 25);
-            imagedestroy($semaCodeGD);
 
             $this->writeRemetente(0, $currentY + $hCepBarCode + 4, $wAddressLeftCol, $this->plp->getRemetente());
 
@@ -468,7 +467,7 @@ class CartaoDePostagem2018
         if (extension_loaded('iconv')) {
             return iconv('UTF-8', 'ISO-8859-1', $str);
         } else {
-            return utf8_decode($str);
+            return mb_convert_encoding($str, 'ISO-8859-1', 'UTF-8');
         }
     }
 

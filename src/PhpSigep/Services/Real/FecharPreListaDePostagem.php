@@ -32,7 +32,7 @@ class FecharPreListaDePostagem
             $listaEtiquetas[] = $objetoPostal->getEtiqueta()->getEtiquetaSemDv();
         }
 
-        $xml = utf8_encode($xmlDaPreLista->flush());
+        $xml = mb_convert_encoding($xmlDaPreLista->flush(), 'UTF-8', 'ISO-8859-1');
 
         $soapArgs = array(
             'xml'            => $xml,

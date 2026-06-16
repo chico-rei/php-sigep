@@ -475,7 +475,6 @@ class CartaoDePostagem
 
                     $this->setFillColor(222, 222, 222);
                     $this->pdf->gdImage($semaCodeGD, 35, 3, 25);
-                    imagedestroy($semaCodeGD);
 
                 }
 
@@ -503,7 +502,7 @@ class CartaoDePostagem
         if (extension_loaded('iconv')) {
             return iconv('UTF-8', 'ISO-8859-1', $str);
         } else {
-            return utf8_decode($str);
+            return mb_convert_encoding($str, 'ISO-8859-1', 'UTF-8');
         }
     }
 
